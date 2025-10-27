@@ -529,6 +529,12 @@ footer ul {
 }
 
 @media screen and (max-width:850px) {
+    button.navbar-toggler {
+    border-color: white;
+}
+i.bi.bi-list {
+    color: white;
+}
      .about-section
     {
         height: auto;
