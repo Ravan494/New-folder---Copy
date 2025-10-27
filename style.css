@@ -29,10 +29,17 @@ section {
 {
     z-index: 999;
     font-size: 21px;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     color: white !important;
     padding: 15px 30px !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.logo
+{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 10px;
 }
 .navbar .navbar-brand,
 .navbar .nav-link,.navbar .nav-item .nav-link {
@@ -307,6 +314,22 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
  }
+ .product-info
+{
+    font-size: 30px;
+    font-weight: 900;
+    /* max-width: 600px; */
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-fill-color: white;
+}
+ .product-name {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-fill-color: white;
+}
+
 /* customer offering */
 .customer-offering
 {
@@ -464,11 +487,19 @@ section {
 
 
 /* footer */
-
+.footer-section
+{
+    background-color: #222;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 footer
 {
     height: auto;
-    background-color: #222;
+    /* background-color: #222; */
     color: #fff;
     display: flex;
     justify-content: center;
@@ -527,7 +558,17 @@ footer ul {
     height: auto;
     opacity: 0.3;
 }
-
+.footer-logo {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+}
+.footer-logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
 @media screen and (max-width:850px) {
     button.navbar-toggler {
     border-color: white;
@@ -561,11 +602,34 @@ i.bi.bi-list {
         padding: 20px;
         /* text-align: center; */
     }
+    .footer-section
+    {
+        height: auto;
+        
+    }
     footer
     {
         height: auto;
         padding: 20px;
         text-align: center;
+    }
+    .product-name
+    {
+        font-size: 40px;
+        -webkit-text-stroke-width: 0.2px;
+        -webkit-text-stroke-color: black;
+        -webkit-text-fill-color: white;
+        font-weight: 900 !important;
+    }
+    .product-info
+    {
+        font-size: 25px;
+        font-weight: 900;
+        /* max-width: 600px; */
+        text-align: center;
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: black;
+        -webkit-text-fill-color: white;
     }
 }
 /* Make flip work on touch when JS toggles .is-flipped */
