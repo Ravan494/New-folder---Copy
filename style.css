@@ -1,0 +1,651 @@
+body,*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* html, body {
+ 
+  scroll-behavior: smooth;
+   scroll-snap-type: y mandatory;
+  
+}
+section {
+  scroll-snap-align: center;
+  min-height: 100vh;         
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.footer-section {
+    height: auto;
+    width: 100%;
+    min-height: 100%;
+    display: block;
+} */
+.navbar
+{
+    z-index: 999;
+    font-size: 21px;
+    font-weight: bolder;
+    color: white !important;
+    padding: 15px 30px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.navbar .navbar-brand,
+.navbar .nav-link,.navbar .nav-item .nav-link {
+    color: #fff;
+}
+.blur
+{
+    backdrop-filter: blur(5px);
+}
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.mobile-video {
+  display: none;
+}
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+/* SCROLL DOWN OVERLAY */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  z-index: 3;
+  font-size: 16px;
+  animation: fadeUpDown 2s infinite;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.scroll-down span {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.scroll-down i {
+  font-size: 22px;
+  color: #9fff9f;
+  transition: transform 0.3s ease;
+}
+
+.scroll-down:hover i {
+  transform: translateY(5px);
+}
+
+/* ANIMATION */
+@keyframes fadeUpDown {
+  0%, 100% {
+    transform: translate(-50%, 0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-50%, -10px);
+    opacity: 1;
+  }
+}
+
+/* CUSTOM GREEN THEME */
+.text-green {
+  color: #9fff9f;
+}
+
+.btn-green {
+  background: linear-gradient(135deg, #4CAF50, #81C784);
+  border: none;
+  color: white;
+  border-radius: 25px;
+  padding: 12px 30px;
+  transition: 0.3s;
+}
+
+.btn-green:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #388E3C, #66BB6A);
+}
+
+/* .about-section */
+/* .about-section .row
+{
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 20px 30px;
+    background-color: #f6efef;
+} */
+.about-section
+{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.about-section img
+{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.first-heading
+{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.second-heading
+{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+
+
+/* product section  */
+/* .product-section
+{
+    height: 100vh;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.product-section .card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    perspective: 1200px; 
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.product-section .card .front,
+.product-section .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+.product-section .card .front {
+    
+    color: black;
+    font-size: 3rem;
+    transform: rotateY(0deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.product-section .card .back {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    color: #222;
+    transform: rotateY(180deg);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.product-section .card:hover .front {
+    transform: rotateY(-180deg);
+}
+
+.product-section .card:hover .back {
+    transform: rotateY(0deg);
+}
+
+
+.product-section .card .front i {
+    font-size: 4.5rem;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+    /* transform: translateZ(60px); */
+/* }
+
+
+.product-section .card:hover {
+    transform: rotateX(5deg);
+    transition: transform 0.4s ease;
+}
+
+
+.product-section .card:hover .front {
+    box-shadow: 0 10px 20px rgba(183, 183, 183, 0.2);
+}
+.product-section .col-md-3 {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */ 
+ .product:nth-child(1){
+    /* background: url('gallery/product/coriander_seeds.png'); */
+    color: white;
+    background: url('gallery/product/coriander_seeds.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+ .product:nth-child(2){
+    /* background: url('gallery/product/coriander_seeds.png'); */
+    color: white;
+    background: url('gallery/product/cumin_seeds.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+ .product:nth-child(3){
+    /* background: url('gallery/product/coriander_seeds.png'); */
+    color: white;
+    background: url('gallery/product/dill_seeds.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+ .product:nth-child(4){
+    /* background: url('gallery/product/coriander_seeds.png'); */
+    color: white;
+    background: url('gallery/product/fennel_seeds.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+ .product:nth-child(5){
+    /* background: url('gallery/product/coriander_seeds.png'); */
+    color: white;
+    background: url('gallery/product/fenugreek_seeds.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+/* customer offering */
+.customer-offering
+{
+    height: auto;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.customer-offering .row
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+/* .customer-offering .col-md-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 0px 50px 0px 50px;
+    
+    border: 1px solid #ccc;
+    transition: all 0.6s ease;
+} */
+.customer-offering .card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    perspective: 1200px; /* stronger 3D depth */
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: white;
+}
+
+.customer-offering .card .front,
+.customer-offering .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* FRONT SIDE */
+.customer-offering .card .front {
+    /* background: linear-gradient(145deg, #007bff, #6610f2); */
+    color: white;
+    font-size: 3rem;
+    border: 1px solid #ccc;
+     transition: all 0.6s ease;
+    transform: rotateY(0deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* BACK SIDE */
+.customer-offering .card .back {
+    background: transparent;
+    color: #222;
+    transform: rotateY(180deg);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* FLIP EFFECT */
+.customer-offering .card:hover .front {
+    transform: rotateY(-180deg);
+}
+
+.customer-offering .card:hover .back {
+    transform: rotateY(0deg);
+}
+
+/* .customer-offering .col-md-3 .card:nth-child(1):hover .back
+{
+    background-color: #B7FDC7;
+    color: black;
+}
+.customer-offering .col-md-3 .card:nth-child(2):hover .back
+{
+    background-color: #CDE9FF;
+    color: black;
+}
+.customer-offering .col-md-3 .card:nth-child(3):hover .back
+{
+    background-color: #FFF0D9;
+    color: black;
+}
+.customer-offering .col-md-3 .card:nth-child(4):hover .back
+{
+    background-color: #EBFFC9;
+    color: black;
+}
+.customer-offering .col-md-3 .card:nth-child(5):hover .back
+{
+    background-color: #FFD6BB;
+    color: black;
+}
+.customer-offering .col-md-3 .card:nth-child(6):hover .back
+{
+    background-color: #B7FDC7;
+    color: black;
+} */
+.customer-offering .row .col-md-3 h3
+{
+    font-size: 18px;
+}
+.customer-offering .row .col-md-3 p
+{
+    font-size: 20px;
+    line-height: 1.2;
+}
+.customer-offering svg
+{
+    height: 50px;
+    width: 50px;
+    padding-bottom: 10px;
+}
+.green
+{
+    color: green;
+}
+.purple
+{
+    color: #8B5CF6;
+}
+
+/* heritage-section */
+.heritage-section
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* footer */
+
+footer
+{
+    height: auto;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer .row
+{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* gap: 50px; */
+}
+footer h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #10B981;
+}
+.footer-section footer ul li {
+    margin-bottom: 0.8rem;
+    color: #94A3B8;
+    line-height: 1.3;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-section footer ul li:hover {
+    color: #10B981;
+    transform: translateX(10px);
+
+}
+
+.footer-section footer a {
+    color: #94A3B8;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+footer a:hover {
+    color: #10B981;
+}
+footer h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-img img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.3;
+}
+
+@media screen and (max-width:850px) {
+     .about-section
+    {
+        height: auto;
+        padding: 20px;
+        margin: 50px 0;
+    }
+    .product-section
+    {
+        height: auto;
+        padding: 20px;
+        margin: 50px 0;
+    }
+    .customer-offering
+    {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+        margin: 50px 0;
+    }
+    .heritage-section
+    {
+        margin: 50px 0;
+        height: auto;
+        padding: 20px;
+        /* text-align: center; */
+    }
+    footer
+    {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+}
+/* Make flip work on touch when JS toggles .is-flipped */
+.product-section .card.is-flipped .front {
+    transform: rotateY(-180deg);
+}
+.product-section .card.is-flipped .back {
+    transform: rotateY(0deg);
+}
+
+/* Navbar scrolled state: switch from transparent to dark */
+.navbar {
+    transition: background-color 0.28s ease, box-shadow 0.28s ease, color 0.2s ease;
+}
+.navbar.nav-scrolled {
+    background: rgba(0,0,0,0.92) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    backdrop-filter: none;
+}
+.navbar.nav-scrolled .navbar-brand,
+.navbar.nav-scrolled .nav-link {
+    color: #fff !important;
+}
+@media screen and (max-width:450px) {
+    .mobile-video {
+      display: block;
+      object-fit: cover;
+    }
+    .desktop-video {
+      display: none;
+    }
+    .about-section
+    {
+        height: auto;
+        padding: 20px;
+        margin: 0px 0;
+    }
+    .about-section .row
+    {       
+        padding: 0;
+    }
+    .about-section .row .col-md-6.d-flex.justify-content-center.align-items-center
+    {       
+        padding: 0;
+    }
+    .product-section
+    {
+        height: auto;
+        padding: 20px;
+        margin: 0px 0;
+    }
+    .product-section .card
+    {
+        width: 250px;
+        height: 250px;
+    }
+    .customer-offering
+    {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+        margin: 0px 0;
+    }
+    .customer-offering .row
+    {
+        flex-direction: column;
+        gap: 20px;
+        /* padding: 20px 50px; */
+    }
+    .customer-offering .row .col-md-3
+    {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .heritage-section
+    {
+        margin: 50px 0;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    footer
+    {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+}
