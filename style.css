@@ -36,12 +36,16 @@ section {
 }
 .logo
 {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
-.navbar .navbar-brand,
+.navbar .navbar-brand
+{
+    padding: 0;
+    margin: 0;
+}
 .navbar .nav-link,.navbar .nav-item .nav-link {
     color: #fff;
     border-radius: 12px;
@@ -604,10 +608,10 @@ footer ul {
     align-items: center;
 }
 .footer-logo img {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 200px;
     object-fit: contain;
-    margin-bottom: 20px;
+    
 }
 @media screen and (max-width:850px) {
     button.navbar-toggler {
@@ -682,6 +686,9 @@ i.bi.bi-list {
 
 
 @media screen and (max-width:450px) {
+    .navbar .container-fluid {
+        padding: 0;
+    }
     .mobile-video {
       display: block;
       object-fit: cover;
@@ -746,4 +753,10 @@ i.bi.bi-list {
         padding: 20px;
         text-align: center;
     }
+    .footer-logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    
+}
 }
