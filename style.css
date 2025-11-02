@@ -31,13 +31,13 @@ section {
     font-size: 21px;
     /* font-weight: bolder; */
     color: white !important;
-    padding: 15px 30px !important;
+    padding: 8px 10px !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .logo
 {
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
     object-fit: contain;
     /* margin-right: 10px; */
 }
@@ -47,7 +47,7 @@ section {
     margin: 0;
 }
 .navbar .nav-link,.navbar .nav-item .nav-link {
-    color: #fff;
+    color: black;
     border-radius: 12px;
     padding: 8px 15px;
 }
@@ -78,7 +78,7 @@ ul.navbar-nav.me-auto.mb-2.m-auto.mb-lg-0 {
 }
 .navbar.nav-scrolled .navbar-brand,
 .navbar.nav-scrolled .nav-link {
-    color: #fff !important;
+    color: black !important;
 }
 .navbar.nav-scrolled .nav-link:hover {
     color: black !important;
@@ -168,6 +168,8 @@ ul.navbar-nav.me-auto.mb-2.m-auto.mb-lg-0 {
 /* CUSTOM GREEN THEME */
 .text-green {
   color: #9fff9f;
+      text-shadow: rgba(159, 255, 159, 0.5) 2px 2px 12.0014px, rgba(159, 255, 159, 0.3) 0px 0px 20.0046px;
+
 }
 
 .btn-green {
@@ -311,16 +313,16 @@ ul.navbar-nav.me-auto.mb-2.m-auto.mb-lg-0 {
     align-items: center;
     justify-content: center;
 } */ 
- .product:nth-child(1){
-    /* background: url('gallery/product/coriander_seeds.png'); */
+ 
+ /* .product:nth-child(1){
+    
     color: white;
     background: url('gallery/product/coriander_seeds.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
- }
- .product:nth-child(2){
-    /* background: url('gallery/product/coriander_seeds.png'); */
+ } */
+ /* .product:nth-child(2){
     color: white;
     background: url('gallery/product/cumin_seeds.png');
     background-position: center;
@@ -328,7 +330,6 @@ ul.navbar-nav.me-auto.mb-2.m-auto.mb-lg-0 {
     background-repeat: no-repeat;
  }
  .product:nth-child(3){
-    /* background: url('gallery/product/coriander_seeds.png'); */
     color: white;
     background: url('gallery/product/dill_seeds.png');
     background-position: center;
@@ -336,7 +337,6 @@ ul.navbar-nav.me-auto.mb-2.m-auto.mb-lg-0 {
     background-repeat: no-repeat;
  }
  .product:nth-child(4){
-    /* background: url('gallery/product/coriander_seeds.png'); */
     color: white;
     background: url('gallery/product/fennel_seeds.png');
     background-position: center;
@@ -344,26 +344,149 @@ ul.navbar-nav.me-auto.mb-2.m-auto.mb-lg-0 {
     background-repeat: no-repeat;
  }
  .product:nth-child(5){
-    /* background: url('gallery/product/coriander_seeds.png'); */
     color: white;
     background: url('gallery/product/fenugreek_seeds.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+ } */
+  .product-section{
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .product-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(159, 255, 159, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(159, 255, 159, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .product-section-header {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+  }
+ .product-card
+ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px auto;
+    width: 85%;
+    max-width: 1400px;
+    height: auto;
+    padding: 50px 40px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(159, 255, 159, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+ }
+ .product-card::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(90deg, transparent, rgba(159, 255, 159, 0.1), transparent);
+   transition: left 0.6s ease;
+ }
+ .product-card:hover::before {
+   left: 100%;
+ }
+ .product-card:hover {
+   transform: translateY(-10px) scale(1.02);
+   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15),
+               0 15px 40px rgba(0, 0, 0, 0.1),
+               inset 0 1px 0 rgba(255, 255, 255, 0.9);
+   border-color: rgba(159, 255, 159, 0.4);
+ }
+ .product-card-content
+ {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    /* gap: 25px; */
+    width: 50%;
+    position: relative;
+    z-index: 1;
+ }
+ .product-card-image
+ {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+ }
+ .product-card-image img,
+ .product-img
+ {
+    width: 400px;
+    border-radius: 18px;
+    height: 400px;
+    object-fit: cover;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+ }
+ .product-card:hover .product-img {
+   transform: scale(1.1) rotate(5deg);
+   filter: drop-shadow(0 15px 40px rgba(159, 255, 159, 0.3));
  }
  .product-info
 {
-    font-size: 30px;
-    font-weight: 900;
-    /* max-width: 600px; */
-    text-align: center;
-    
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: start;
+    color: #333;
     z-index: 2;
 }
  .product-name {
-    
     z-index: 2;
+    transition: all 0.3s ease;
 }
+ .product-card:hover .product-name {
+   transform: translateX(5px);
+ }
+ .product-features {
+   display: flex;
+   gap: 15px;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+ }
+ .feature-badge {
+   padding: 10px 20px;
+   background: linear-gradient(135deg, #9fff9f, #7dd87d);
+   color: #1a5a1a;
+   border-radius: 25px;
+   font-size: 14px;
+   font-weight: 600;
+   box-shadow: 0 4px 15px rgba(159, 255, 159, 0.3);
+   transition: all 0.3s ease;
+   border: 2px solid rgba(159, 255, 159, 0.3);
+ }
+ .feature-badge:hover {
+   transform: translateY(-3px) scale(1.05);
+   box-shadow: 0 6px 20px rgba(159, 255, 159, 0.4);
+   background: linear-gradient(135deg, #7dd87d, #9fff9f);
+ }
 .product-overlay {
   position: absolute;
   top: 0;
@@ -506,8 +629,8 @@ ul.navbar-nav.me-auto.mb-2.m-auto.mb-lg-0 {
 }
 .customer-offering svg
 {
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     padding-bottom: 10px;
 }
 .green
@@ -615,11 +738,11 @@ footer ul {
 }
 @media screen and (max-width:850px) {
     button.navbar-toggler {
-    border-color: white;
-}
-i.bi.bi-list {
-    color: white;
-}
+    border-color: black;
+    }
+    i.bi.bi-list {
+        color: black;
+    }
      .about-section
     {
         height: auto;
@@ -629,8 +752,49 @@ i.bi.bi-list {
     .product-section
     {
         height: auto;
-        padding: 20px;
+        padding: 20px 10px;
         margin: 50px 0;
+    }
+    .product-section-header {
+      padding: 20px 10px;
+    }
+    .product-card {
+      flex-direction: column !important;
+      width: 95%;
+      padding: 30px 20px;
+      gap: 30px;
+      margin: 30px auto;
+    }
+    .product-card.flex-row-reverse {
+      flex-direction: column !important;
+    }
+    .product-card-content {
+      width: 100%;
+      gap: 0px;
+      align-items: center;
+    }
+    .product-card-image {
+      width: 100%;
+    }
+    .product-card-image img,
+    .product-img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      max-height: 350px;
+    }
+   
+    .product-info {
+      font-size: 16px;
+      padding: 0 10px !important;
+      line-height: 1.6;
+    }
+    .product-features {
+      gap: 10px;
+    }
+    .feature-badge {
+      font-size: 12px;
+      padding: 8px 16px;
     }
     .customer-offering
     {
@@ -659,21 +823,15 @@ i.bi.bi-list {
     }
     .product-name
     {
-        font-size: 40px;
-        /* -webkit-text-stroke-width: 0.2px;
-        -webkit-text-stroke-color: black;
-        -webkit-text-fill-color: white; */
+        font-size: 32px !important;
         font-weight: 900 !important;
     }
     .product-info
     {
-        font-size: 25px;
+        font-size: 16px;
         font-weight: 500;
-        /* max-width: 600px; */
         text-align: center;
-        /* -webkit-text-stroke-width: 0.1px;
-        -webkit-text-stroke-color: black;
-        -webkit-text-fill-color: white; */
+        line-height: 1.7;
     }
 }
 /* Make flip work on touch when JS toggles .is-flipped */
@@ -713,8 +871,48 @@ i.bi.bi-list {
     .product-section
     {
         height: auto;
-        padding: 20px;
+        padding: 15px 5px;
         margin: 0px 0;
+    }
+    .product-section-header {
+      padding: 15px 5px;
+    }
+    .product-section-header .first-heading {
+      font-size: 35px !important;
+    }
+    .product-section-header .second-heading {
+      font-size: 20px !important;
+    }
+    .product-section-header .lead {
+      font-size: 18px !important;
+      font-weight: 500;
+    }
+    .product-card {
+      flex-direction: column !important;
+      width: 98%;
+      padding: 25px 15px;
+      gap: 25px;
+      margin: 25px auto;
+      border-radius: 20px;
+    }
+    .product-card.flex-row-reverse {
+      flex-direction: column !important;
+    }
+    .product-card-content {
+      width: 100%;
+      gap: 0px;
+      align-items: center;
+    }
+    .product-card-image {
+      width: 100%;
+    }
+    .product-card-image img,
+    .product-img {
+      width: 250px;
+      height: 250px;
+      margin: 20px 0;
+      max-width: 280px;
+      max-height: 280px;
     }
     .product-section .card
     {

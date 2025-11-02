@@ -28,27 +28,27 @@
 	// }
 
 	// NAVBAR: toggle dark background when scrolled
-	function setupNavbarScroll() {
-		const nav = document.getElementById('mainNav') || document.querySelector('nav.navbar');
-		if(!nav) return;
+	// function setupNavbarScroll() {
+	// 	const nav = document.getElementById('mainNav') || document.querySelector('nav.navbar');
+	// 	if(!nav) return;
 
-		const SCROLL_THRESHOLD = 100; // px
+	// 	const SCROLL_THRESHOLD = 100; // px
 
-		function update() {
-			if(window.scrollY > SCROLL_THRESHOLD) nav.classList.add('nav-scrolled');
-			else nav.classList.remove('nav-scrolled');
-		}
+	// 	function update() {
+	// 		if(window.scrollY > SCROLL_THRESHOLD) nav.classList.add('nav-scrolled');
+	// 		else nav.classList.remove('nav-scrolled');
+	// 	}
 
-		// run on load and on scroll
-		update();
-		window.addEventListener('scroll', update, { passive: true });
-	}
+	// 	// run on load and on scroll
+	// 	update();
+	// 	window.addEventListener('scroll', update, { passive: true });
+	// }
 
-	// initialize when DOM ready
-	if(document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', setupNavbarScroll);
-	} else {
-		setupNavbarScroll();
-	}
+	// // initialize when DOM ready
+	// if(document.readyState === 'loading') {
+	// 	document.addEventListener('DOMContentLoaded', setupNavbarScroll);
+	// } else {
+	// 	setupNavbarScroll();
+	// }
 
 // })();
