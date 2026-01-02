@@ -24,15 +24,15 @@ html
     line-height: 1;
 }
 .second-heading {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
-    margin-top: 1rem;
+    margin: 1rem 0 1rem 0;
 }
 .process-text
 {
     text-align: center;
     /* font-family: "Outfit", Raleway; */
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 300;
     line-height: 29px;
     color: #545455;
